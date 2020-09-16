@@ -34,8 +34,8 @@ class CalendarsController < ApplicationController
       plan = plans.map do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
       end
-      
-      if 
+      wday_num = Date.today.wday + x
+      if wday_num > 7
         wday_num = wday_num - 7
       end
       
@@ -45,3 +45,4 @@ class CalendarsController < ApplicationController
 
   end
 end
+
